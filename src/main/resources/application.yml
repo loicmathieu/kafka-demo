@@ -1,0 +1,20 @@
+logging:
+  level:
+    root: INFO
+    org.elasticsearch.plugins: WARN
+
+spring:
+  #exclude JPA and Hibernate auto configuration as we don't use them
+  autoconfigure:
+    exclude:
+    - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+    - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+    - org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+  
+  #configure spring cloud with a kafka broker and all the bindings defined in com.adeo.psh.siriusv2.indexer.bindings.Bindings
+  cloud:
+    stream:
+      bindings:
+        RAW_DATA:
+          destination: demo.raw_data
+          group: demo      kafka:        binder:          brokers:          - localhost:9092
