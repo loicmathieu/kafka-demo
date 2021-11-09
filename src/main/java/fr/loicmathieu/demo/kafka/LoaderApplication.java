@@ -25,7 +25,7 @@ public class LoaderApplication {
      * The run of the application : generate 1000 data, send them to kafka and stop
      */
     public static void main(String[] args) {
-    	// propertiesfor the Kafka producer
+    	// properties for the Kafka producer
     	Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());

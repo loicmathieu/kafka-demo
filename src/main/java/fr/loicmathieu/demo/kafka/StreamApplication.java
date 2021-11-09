@@ -31,5 +31,5 @@ public class StreamApplication {
     }
 
 
-    //TODO create a receive method that will handle the data send to the Bindins.RAW_DATA topic
+    //TODO create a receive method that will handle the data send to the Bindings.RAW_DATA topic
 }
