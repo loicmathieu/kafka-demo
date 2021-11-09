@@ -35,7 +35,7 @@ public class LoaderApplication {
 	        for(int i=0; i<1000; i++) {
 	            String msg = "TEXT" + i + ";" + i + ";" + LocalDateTime.now().plusDays(1);
 	
-	            //TODO send a message to Kafka on the topic `TOPIC`, with a key and the message `msg`
+	            producer.send(new ProducerRecord<>(TOPIC, UUID.randomUUID().toString(), msg));
 	        }
         }
     }

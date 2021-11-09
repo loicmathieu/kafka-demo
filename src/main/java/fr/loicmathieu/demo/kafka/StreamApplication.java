@@ -31,5 +31,9 @@ public class StreamApplication {
     }
 
 
-    //TODO create a receive method that will handle the data send to the Bindings.RAW_DATA topic
+    @StreamListener(Bindings.RAW_DATA)
+    public void read(String msg) {
+    	System.out.println(msg);
+    }
+
 }
